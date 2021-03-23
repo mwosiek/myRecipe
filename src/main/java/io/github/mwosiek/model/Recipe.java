@@ -1,6 +1,7 @@
 package io.github.mwosiek.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 
 //klasa podstawowa
 
@@ -16,13 +17,26 @@ import javax.persistence.*;
         //id przepisu
         private int id;
 
+        /*@NotBlank - adnotacja, której można użyć do opisu walidacji.
+        * Sama adnotacja nie wystarczy, trzeba jeszcze dodać walidację
+        * w "MyRecipeApplication" */
+
         //nazwa przepisu
+        @NotBlank(message = "Przepis musi mieć tytuł")
         private String title;
 
         //treść przepisu
+        @NotBlank(message = "Przepis musi opis")
         private String content;
 
 
+        /*bezparametrowy konstruktor, dlatego ze hibernate mógłby mieć
+        problemy po zmianie w repozytorium restresource na inne*/
+        Recipe(){
+        }
+
+
+        //gettery i settery
 
         public int getId() {
             return id;
