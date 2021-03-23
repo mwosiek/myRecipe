@@ -29,6 +29,10 @@ import javax.validation.constraints.NotBlank;
         @NotBlank(message = "Przepis musi mieć opis")
         private String content;
 
+        //cena przepisu
+        @NotBlank(message = "Przepis musi mieć cenę")
+        private float price;
+
 
         /*bezparametrowy konstruktor, dlatego ze hibernate mógłby mieć
         problemy po zmianie w repozytorium restresource na inne*/
@@ -37,6 +41,15 @@ import javax.validation.constraints.NotBlank;
 
 
         //gettery i settery
+
+
+        public float getPrice() {
+            return price;
+        }
+
+        public void setPrice(final float price) {
+            this.price = price;
+        }
 
         public int getId() {
             return id;
