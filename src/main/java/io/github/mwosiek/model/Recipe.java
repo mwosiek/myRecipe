@@ -2,6 +2,7 @@ package io.github.mwosiek.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import java.util.Date;
 
 //klasa podstawowa
 
@@ -33,6 +34,9 @@ import javax.validation.constraints.NotBlank;
         @NotBlank(message = "Przepis musi mieć cenę")
         private float price;
 
+        //data
+        @NotBlank(message = "Przepis musi mieć datę")
+        private Date date;
 
         /*bezparametrowy konstruktor, dlatego ze hibernate mógłby mieć
         problemy po zmianie w repozytorium restresource na inne*/
@@ -42,6 +46,13 @@ import javax.validation.constraints.NotBlank;
 
         //gettery i settery
 
+        public Date getDate() {
+            return date;
+        }
+
+        public void setDate(final Date date) {
+            this.date = date;
+        }
 
         public float getPrice() {
             return price;
