@@ -26,7 +26,7 @@ import javax.validation.constraints.NotBlank;
         private String title;
 
         //treść przepisu
-        @NotBlank(message = "Przepis musi opis")
+        @NotBlank(message = "Przepis musi mieć opis")
         private String content;
 
 
